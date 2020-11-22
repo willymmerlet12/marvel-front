@@ -22,7 +22,7 @@ const ComicsH = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://marvel-backk.herokuapp.com/comics?page=${page}`
+          `http://localhost:3100/comics?page=${page}`
         );
 
         setPageMax(Math.ceil(Number(response.data.data.total) / limit));

@@ -13,7 +13,7 @@ const Comics = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://marvel-backk.herokuapp.com/comics/${id}`);
+        const response = await axios.get(`http://localhost:3100/comics/${id}`);
 
         setComics(response.data.data);
 

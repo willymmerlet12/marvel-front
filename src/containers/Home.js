@@ -22,7 +22,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://marvel-backk.herokuapp.com/character?page=${page}&name=${searchCharacter}`
+          `http://localhost:3100/character?page=${page}&name=${searchCharacter}`
         );
         console.log(response.data);
         setCharacters(response.data.data);
