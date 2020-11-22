@@ -23,7 +23,6 @@ function App() {
         <Route path="/character/:id">
           <Character />
         </Route>
-
         <Route path="/">
           <Home />
         </Route>

@@ -13,10 +13,10 @@ const Character = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3100/character/${id}`
+          `https://marvel-backk.herokuapp.com/character/${id}`
         );
         const responseComics = await axios.get(
-          `http://localhost:3100/character/${id}/comics`
+          `https://marvel-backk.herokuapp.com/character/${id}/comics`
         );
         setComics(responseComics.data.data);
         setCharacter(response.data.data);
