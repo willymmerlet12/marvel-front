@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import ReactPaginate from "react-paginate";
-import CharacterDet from "../components/CharacterDet";
+import ComicsDetails from "../components/ComicsDetails";
 import Loader from "react-loader-spinner";
-import Search from "../components/searchChar";
-const Home = () => {
+import ReactPaginate from "react-paginate";
+
+const ComicsH = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [characters, setCharacters] = useState([]);
-  const [searchCharacter, setSearchCharacter] = useState("");
+  const [comics, setComics] = useState([]);
+  const [pageMax, setPageMax] = useState(0);
   const [page, setPage] = useState(1);
   const limit = 100;
-  const [pageMax, setPageMax] = useState(0);
   const [style, setStyle] = useState({ display: "none" });
 
   const handleClickPage = (event) => {
+    console.log(event);
     setPage(event.selected + 1);
   };
 
@@ -22,29 +22,30 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3100/character?page=${page}&name=${searchCharacter}`
+          `http://localhost:3100/comics?page=${page}`
         );
-        console.log(response.data);
-        setCharacters(response.data.data);
-        setIsLoading(false);
+
         setPageMax(Math.ceil(Number(response.data.data.total) / limit));
+        setComics(response.data.data);
+        setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
     };
 
     fetchData();
-  }, [page, searchCharacter]);
-
+  }, [page]);
   return isLoading ? (
-    <Loader
-      type="Rings"
-      color="red"
-      height={120}
-      width={120}
-      timeout={6000}
-      className="loader"
-    />
+    <div>
+      <Loader
+        type="Rings"
+        color="red"
+        height={80}
+        width={80}
+        timeout={6000}
+        className="loader"
+      />
+    </div>
   ) : (
     <div>
       <h1
@@ -54,12 +55,11 @@ const Home = () => {
       >
         DISCOSVER THE UNIVERSE OF MARVEL
       </h1>
-
-      {characters.results.map((char, i) => {
+      {comics.results.map((char, i) => {
         return (
-          <Link key={char.id} to={`/character/${char.id}`}>
+          <Link key={char.id} to={`/comics/${char.id}`}>
             <div>
-              <CharacterDet key={char.id} char={char} />
+              <ComicsDetails key={char.id} char={char} />
             </div>
           </Link>
         );
@@ -83,4 +83,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ComicsH;

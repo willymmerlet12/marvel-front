@@ -1,12 +1,30 @@
 /* Other rules */
 body {
+  background-image: url("./img/bb.jpg");
+  font-family: "Oswald", sans-serif;
 }
 body nav {
   position: sticky;
   top: 0;
 }
+div {
+  display: block;
+}
+/* LOADER*/
+.loader {
+  margin: 120px auto;
+  height: calc(120vh -200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /* HEADER */
-
+.cap img {
+  height: 75px;
+  width: 100px;
+  background-color: #f0211e;
+}
 .header-container {
   display: flex;
   align-items: center;
@@ -16,6 +34,42 @@ body nav {
   margin: auto 0;
   padding: 10px 0;
   border-radius: 5px;
+}
+
+.search-cont {
+  position: relative;
+}
+
+.search-input {
+  margin-top: 20px;
+  font-family: "Font";
+  padding-left: 40px;
+  width: 590px;
+  background-color: white;
+  border-radius: 5px;
+  height: 37px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+input {
+  text-rendering: auto;
+  color: black;
+  text-transform: none;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: textfield;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+}
+.search-icon {
+  position: relative;
+  left: 7px;
+  top: 10px;
+  color: green;
 }
 ul li {
   display: inline;
@@ -27,12 +81,123 @@ li {
   color: white;
   font-weight: 600;
   font-size: 20px;
-  border: 3px solid white;
   border-radius: 5px;
+}
+.header-container li:hover {
+  font-size: 28px;
 }
 .logo img {
   height: 60px;
 }
 a {
   text-decoration: none;
+}
+.char-i img {
+  height: 350px;
+  width: 260px;
+
+  border-radius: 5px;
+}
+.card-full {
+  width: 55%;
+  margin-left: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+}
+.item-div {
+  flex: 0 0 20%;
+  width: 16vw;
+  padding: 1vw;
+  margin: auto;
+}
+.titre-card {
+  font-size: 20px;
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  border-radius: 5px;
+}
+
+/* ID CHAR */
+.char-img img {
+  border-radius: 2px;
+  margin-left: 10px;
+  margin-top: 20px;
+  height: 500px;
+}
+.character-container {
+  display: flex;
+}
+.character-container .char-img,
+.character-container .char-infos {
+  width: 50%;
+}
+.titre-id {
+  font-size: 40px;
+  color: #ff5858;
+}
+.desc-text {
+  font-size: 20px;
+  color: white;
+  line-height: 25px;
+  margin-right: 130px;
+}
+.comics-ord {
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  margin-right: 20px;
+}
+.item-ord {
+  flex: 0 0 20%;
+  width: 16vw;
+  padding: 1vw;
+  margin: auto;
+}
+.comic-title {
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.comic-id img {
+  height: 200px;
+}
+.comic-id {
+  display: flex;
+}
+ul {
+  display: inline;
+}
+.search-bar {
+  color: white;
+  border-radius: 5px;
+}
+.pagination a {
+  cursor: pointer;
+  outline: none;
+}
+.pagination {
+  margin-top: 20px;
+  margin-left: 360px;
+}
+h1 {
+  color: transparent;
+  font-size: 30px;
+  margin-left: 500px;
+}
+h1:hover {
+  color: white;
+}
+h3 {
+  font-size: 25px;
+  color: white;
+  margin-left: 180px;
 }
